@@ -2,12 +2,19 @@
 const script = document.querySelector('.api');
 const list = document.querySelector('.list');
 
-function jsonp(data) {
-	for(i = 0; i < Object.keys(data).length; i++){
+function jsonp(jobs) {
+	jobs.forEach(job => {
+		//console.log(data);
+		count = 0;
+		card = document.createElement("div");
+		card.classList.add('card');
+		list.appendChild(card);
+
+		count += 1;
 		jobListing = document.createElement("p");
-        jobListing.textContent = `${i}: ` + data[`${i}`].title + ":" + data[`${i}`].company + "," + data[`${i}`].location;
-        list.appendChild(jobListing);
-	}
+        jobListing.textContent = `Job ${count}: ${job.title} in ${job.location}`
+		card.appendChild(jobListing);
+	});
 }
 
 
