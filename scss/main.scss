@@ -1,6 +1,107 @@
-.card {
-    margin: auto;
-    background: lighten(#999, 20);
-    height: 300px;
-    width: 300px;
+@import url('https://fonts.googleapis.com/css?family=Hind');
+
+$primaryFnt: #333;
+
+@mixin easeOut {
+    transition: all .6s ease-out;
 }
+
+
+html, body {
+  margin: 0;
+  font-family: Hind, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem;
+
+  .card {
+    margin: 0 auto;
+    background: lighten(#888, 35);
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 300px;
+    font-size: .8em;
+    @include easeOut;
+    @media only screen and (max-width: 400px) {
+        width: 90%;
+        margin: auto;
+     }
+    
+    a {
+      text-decoration: none;
+      color: #222;
+
+      h3 {
+          margin: 0 .6em;
+          color: lighten(#222, 6);
+      }
+      
+      .info {
+        margin: 1.3em;
+          h4 {
+          font-size: .9em;
+          color: lighten($primaryFnt, 10);
+          margin: 0;
+          font-weight: 300;
+        }
+      }
+    }
+    
+    &:hover {
+      box-shadow: 1px 1px 10px $primaryFnt;
+      img {
+        opacity: 1;
+        box-shadow: .5px .5px 5px $primaryFnt;
+        @include easeOut;
+      }
+    }
+    
+    img {
+      margin-top: .8em;
+      width: 80px;
+      border-radius: 50%;
+      height: 80px;
+      opacity: 0.4;
+    }
+    
+    .bottomWrapper {
+      button {
+        padding: 1em;
+        background: $primaryFnt;
+        color: #f1f1f1;
+        cursor: pointer;
+        outline: none;
+        border-radius: 8%;
+        box-shadow: 2px 2px 4px $primaryFnt;
+        border: none;
+        transition: all .3s ease-out;
+        
+        &:hover {
+          transform: translate(0px,-3px);
+          box-shadow: 2px 2px 8px $primaryFnt;
+        }
+      }
+    }
+  } 
+}
+
+.wrapper {
+    min-height: calc(100vh - 2rem);
+ }
+ 
+ .content {
+   margin-top: 5em;
+   text-align: center;
+   
+      @media only screen and (max-width: 600px) {
+         margin-top: 3em;
+     }
+   
+     @media only screen and (max-width: 400px) {
+         margin-top: .5em;
+     }
+ }

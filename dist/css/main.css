@@ -1,5 +1,73 @@
-.card {
-  margin: auto;
-  background: #cccccc;
-  height: 300px;
-  width: 300px; }
+@import url("https://fonts.googleapis.com/css?family=Hind");
+html, body {
+  margin: 0;
+  font-family: Hind, sans-serif; }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2rem; }
+  .container .card {
+    margin: 0 auto;
+    background: #e1e1e1;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 300px;
+    font-size: .8em;
+    transition: all .6s ease-out; }
+    @media only screen and (max-width: 400px) {
+      .container .card {
+        width: 90%;
+        margin: auto; } }
+    .container .card a {
+      text-decoration: none;
+      color: #222; }
+      .container .card a h3 {
+        margin: 0 .6em;
+        color: #313131; }
+      .container .card a .info {
+        margin: 1.3em; }
+        .container .card a .info h4 {
+          font-size: .9em;
+          color: #4d4d4d;
+          margin: 0;
+          font-weight: 300; }
+    .container .card:hover {
+      box-shadow: 1px 1px 10px #333; }
+      .container .card:hover img {
+        opacity: 1;
+        box-shadow: 0.5px 0.5px 5px #333;
+        transition: all .6s ease-out; }
+    .container .card img {
+      margin-top: .8em;
+      width: 80px;
+      border-radius: 50%;
+      height: 80px;
+      opacity: 0.4; }
+    .container .card .bottomWrapper button {
+      padding: 1em;
+      background: #333;
+      color: #f1f1f1;
+      cursor: pointer;
+      outline: none;
+      border-radius: 8%;
+      box-shadow: 2px 2px 4px #333;
+      border: none;
+      transition: all .3s ease-out; }
+      .container .card .bottomWrapper button:hover {
+        transform: translate(0px, -3px);
+        box-shadow: 2px 2px 8px #333; }
+
+.wrapper {
+  min-height: calc(100vh - 2rem); }
+
+.content {
+  margin-top: 5em;
+  text-align: center; }
+  @media only screen and (max-width: 600px) {
+    .content {
+      margin-top: 3em; } }
+  @media only screen and (max-width: 400px) {
+    .content {
+      margin-top: .5em; } }
