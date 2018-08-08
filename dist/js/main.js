@@ -1,5 +1,17 @@
-const script = document.querySelector('.api');
-const container = document.querySelector('.container');
+
+//https://jobs.github.com/positions.json?description=python&callback=jsonp
+
+const container = document.createElement('div');
+container.classList.add('container');
+document.querySelector('.content').appendChild(container);
+
+const script = document.createElement("script");
+script.src = 'https://jobs.github.com/positions.json?description=scala&callback=jsonp'//"https://jobs.github.com/positions.json?description=LANG&callback=jsonp";
+document.querySelector('body').appendChild(script);
+
+const allJobs = document.querySelector('.allJobs');
+const java = document.querySelector('.java');
+const javascript = document.querySelector('.javascript');
 
 function jsonp(jobs) {
 	jobs.forEach(job => {
@@ -66,12 +78,3 @@ function jsonp(jobs) {
 		cardBtn.appendChild(cardArrow);
 	});
 }
-
-
-
-
-//dymanic content
-// var s = document.createElement("script");
-// s.src = "https://jobs.github.com/positions.json?description=+LANG+&callback=jsonp";
-// s.type = "text/javascript";
-// $('body').append(s);
