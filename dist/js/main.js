@@ -15,8 +15,6 @@ const phpBtn = document.querySelector('.php'); const javaScriptBtn = document.qu
 const dotNetBtn = document.querySelector('.dotNet'); const railsBtn = document.querySelector('.rails'); const scalaBtn = document.querySelector('.scala');
 const androidBtn = document.querySelector('.android'); const iosBtn = document.querySelector('.ios');
 
-
-
 function jsonp(jobs) {
 
 	var infoIndex = [];
@@ -122,6 +120,105 @@ scalaBtn.addEventListener('click', () => {
 	scalaBtn.classList.add('current');
 });
 
+javaBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=java&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	javaBtn.classList.add('current');
+});
+
+pythonBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=python&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	pythonBtn.classList.add('current');
+});
+
+phpBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=php&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	phpBtn.classList.add('current');
+});
+
+javaScriptBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=javascript&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	javaScriptBtn.classList.add('current');
+});
+
+cppBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=c++&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	cppBtn.classList.add('current');
+});
+
+dotNetBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=.NET&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	dotNetBtn.classList.add('current');
+});
+
+androidBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=Android&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	androidBtn.classList.add('current');
+});
+
+iosBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?description=iOS&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	iosBtn.classList.add('current');
+});
+
+allJobsBtn.addEventListener('click', () => {
+	deleteElt();
+	deleteCards();
+	const s = document.createElement('script');
+	s.classList.add('api');
+	s.src = 'https://jobs.github.com/positions.json?&callback=jsonp';
+	document.querySelector('body').appendChild(s);
+	deselectBtn();
+	allJobsBtn.classList.add('current');
+});
+//TODO: ADD LINKS TO JOB APPLICATION in modal, clean up code, change footer & header, add location search
 function deselectBtn() {
 	let btns = document.querySelectorAll('.btn');
 	[].forEach.call(btns, (btn) => {

@@ -1,3 +1,8 @@
+//Author: Azez Nassar [@NassarAzez]
+//Date: 2018 July/August
+//API: Github jobs
+//UI Inspiration: Discord
+
 @import url('https://fonts.googleapis.com/css?family=Hind');
 
 $primaryFnt: #333;
@@ -201,7 +206,7 @@ html, body {
           font-size: 2rem;
         }
       &:hover {
-        color: lighten(blue, 20);
+        color: $primaryClr;
       }
     }
   }
