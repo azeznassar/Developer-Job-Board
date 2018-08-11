@@ -44,7 +44,7 @@ html, body {
       width: 80px;
       border-radius: 50%;
       height: 80px;
-      opacity: 0.4; }
+      opacity: 0.5; }
     .container .card .bottomWrapper button {
       padding: 1em;
       background: #333;
@@ -75,7 +75,7 @@ html, body {
 .filters {
   padding: 2em; }
   .filters .buttons button {
-    background: #ccccff;
+    background: #b0caff;
     outline: none;
     border: none;
     border-radius: 50px;
@@ -86,10 +86,10 @@ html, body {
     cursor: pointer;
     transition: all .3s ease-in; }
     .filters .buttons button:hover {
-      background: #6666ff;
+      background: #3076ff;
       color: #f1f1f1; }
     .filters .buttons button.current {
-      background: #6666ff;
+      background: #3076ff;
       color: #f1f1f1; }
   .filters .buttons .divider {
     background-color: #cccccc;
@@ -103,7 +103,7 @@ html, body {
     font-size: 1.2em; }
 
 .header {
-  background: #626aa7;
+  background: #3076ff;
   color: #f1f1f1;
   position: relative;
   width: 100%;
@@ -127,7 +127,8 @@ html, body {
       .header .title {
         font-size: 1em; } }
   .header .headerCurve {
-    width: 100%; }
+    width: 100%;
+    fill: #3076ff; }
 
 .footer {
   margin-top: .5em;

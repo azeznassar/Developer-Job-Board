@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Hind');
 
 $primaryFnt: #333;
+$primaryClr: #3076ff;
 
 @mixin easeOut {
     transition: all .6s ease-out;
@@ -65,7 +66,7 @@ html, body {
       width: 80px;
       border-radius: 50%;
       height: 80px;
-      opacity: 0.4;
+      opacity: 0.5;
     }
     
     .bottomWrapper {
@@ -110,7 +111,7 @@ html, body {
   padding: 2em;
   .buttons {
       button {
-      background: lighten(blue, 40);
+      background: lighten($primaryClr, 25);
       outline: none;
       border: none;
       border-radius: 50px;
@@ -122,12 +123,12 @@ html, body {
       transition: all .3s ease-in;
        
         &:hover {
-          background: lighten(blue, 20);
+          background: $primaryClr;
           color: #f1f1f1;
         }
 
         &.current {
-          background: lighten(blue, 20);
+          background: $primaryClr;
           color: #f1f1f1;
         }
     }
@@ -149,7 +150,7 @@ html, body {
 }
 
 .header {
-  background: #626aa7;
+  background: $primaryClr;
   color: #f1f1f1;
   position: relative;
   width: 100%;
@@ -178,6 +179,8 @@ html, body {
   
  .headerCurve {
    width: 100%;
+   fill: $primaryClr;
+
   }
 }
 
