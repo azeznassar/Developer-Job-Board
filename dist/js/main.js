@@ -102,9 +102,10 @@ window.addEventListener('click', (e) => { if(e.target == infoModal) infoModal.st
 
 railsBtn.addEventListener('click', () => {
 	deleteElt();
+	deleteCards();
 	const s = document.createElement('script');
 	s.classList.add('api');
-	s.src = 'https://jobs.github.com/positions.json?description=rails&callback=jsonp'//"https://jobs.github.com/positions.json?description=LANG&callback=jsonp";
+	s.src = 'https://jobs.github.com/positions.json?description=rails&callback=jsonp';
 	document.querySelector('body').appendChild(s);
 	deselectBtn();
 	railsBtn.classList.add('current');
@@ -112,9 +113,10 @@ railsBtn.addEventListener('click', () => {
 
 scalaBtn.addEventListener('click', () => {
 	deleteElt();
+	deleteCards();
 	const s = document.createElement('script');
 	s.classList.add('api');
-	s.src = 'https://jobs.github.com/positions.json?description=scala&callback=jsonp'//"https://jobs.github.com/positions.json?description=LANG&callback=jsonp";
+	s.src = 'https://jobs.github.com/positions.json?description=scala&callback=jsonp';
 	document.querySelector('body').appendChild(s);
 	deselectBtn();
 	scalaBtn.classList.add('current');
@@ -128,6 +130,15 @@ function deselectBtn() {
 }
 
 function deleteElt() {
-	const s = document.querySelector('.api');
-	document.querySelector('body').removeChild(s);
+	const script = document.querySelector('.api');
+	document.querySelector('body').removeChild(script);
+}
+
+function deleteCards() {
+	const cards = document.getElementsByClassName('card');
+	var cardsArray = [].slice.call(cards);
+	//console.log(cardsArray);
+	cardsArray.forEach(card => {
+		document.querySelector('.container').removeChild(card);
+	});
 }
