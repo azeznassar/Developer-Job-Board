@@ -2,6 +2,9 @@
 //https://jobs.github.com/positions.json?description=python&callback=jsonp
 
 const container = document.createElement('div');
+const infoModal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal-body');
+const modalClose = document.querySelector('.closeBtn');
 container.classList.add('container');
 document.querySelector('.content').appendChild(container);
 
@@ -14,6 +17,7 @@ const java = document.querySelector('.java');
 const javascript = document.querySelector('.javascript');
 
 function jsonp(jobs) {
+	var infoIndex = [];
 	jobs.forEach(job => {
 		//create card and append to container
 		card = document.createElement('div');
@@ -76,5 +80,23 @@ function jsonp(jobs) {
 		cardArrow = document.createElement('i');
 		cardArrow.innerHTML = '<i class="fas fa-arrow-right"></i>';
 		cardBtn.appendChild(cardArrow);
+
+		//append current job description into array so I can display on click later
+		infoIndex.push(job.description);
 	});
+
+	const cards = document.getElementsByClassName('card');
+	Array.prototype.forEach.call(cards, function(card, index) {
+		card.addEventListener('click', function() {
+			modalContent.innerHTML = infoIndex[index];
+			infoModal.style.display = 'block';
+		});
+	});
+	//console.log(cards);
 }
+
+
+
+
+modalClose.addEventListener('click', () => infoModal.style.display = 'none');
+window.addEventListener('click', (e) => { if(e.target == infoModal) infoModal.style.display = 'none'});
