@@ -91,7 +91,7 @@ function jsonp(jobs) {
 	const cards = document.getElementsByClassName('card');
 	Array.prototype.forEach.call(cards, function(card, index) {
 		infoIndex[index] += `<a href="${urlIndex[index]}" target="_blank">Application page on Github Jobs</a>`;
-		console.log(infoIndex)
+		//console.log(infoIndex)
 		card.addEventListener('click', function() {
 			modalContent.innerHTML = infoIndex[index];
 			infoModal.style.display = 'block';
