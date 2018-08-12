@@ -18,6 +18,7 @@ const androidBtn = document.querySelector('.android'); const iosBtn = document.q
 function jsonp(jobs) {
 
 	var infoIndex = [];
+	var urlIndex = [];
 
 	jobs.forEach(job => {
 		//create card and append to container
@@ -84,15 +85,19 @@ function jsonp(jobs) {
 
 		//append current job description into array so I can display on click later
 		infoIndex.push(job.description);
+		urlIndex.push(job.url);
 	});
 
 	const cards = document.getElementsByClassName('card');
 	Array.prototype.forEach.call(cards, function(card, index) {
+		infoIndex[index] += `<a href="${urlIndex[index]}" target="_blank">Application page on Github Jobs</a>`;
+		console.log(infoIndex)
 		card.addEventListener('click', function() {
 			modalContent.innerHTML = infoIndex[index];
 			infoModal.style.display = 'block';
 		});
 	});
+	//console.log(urlIndex);
 	//console.log(cards);
 }
 modalClose.addEventListener('click', () => infoModal.style.display = 'none');
