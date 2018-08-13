@@ -83,16 +83,16 @@ function jsonp(jobs) {
 		cardArrow.innerHTML = '<i class="fas fa-arrow-right"></i>';
 		cardBtn.appendChild(cardArrow);
 
-		//append current job description into array so I can display on click later
+		//append current job description into array
 		infoIndex.push(job.description);
 		urlIndex.push(job.url);
 	});
 
 	const cards = document.getElementsByClassName('card');
-	Array.prototype.forEach.call(cards, function(card, index) {
+	Array.prototype.forEach.call(cards, (card, index) => {
 		infoIndex[index] += `<a href="${urlIndex[index]}" target="_blank">Application page on Github Jobs</a>`;
 		//console.log(infoIndex)
-		card.addEventListener('click', function() {
+		card.addEventListener('click', () => {
 			modalContent.innerHTML = infoIndex[index];
 			infoModal.style.display = 'block';
 		});
@@ -223,7 +223,7 @@ allJobsBtn.addEventListener('click', () => {
 	deselectBtn();
 	allJobsBtn.classList.add('current');
 });
-//TODO: ADD LINKS TO JOB APPLICATION in modal, clean up code, change footer & header, add location search
+//TODO: clean up code, change footer & header, add location search
 function deselectBtn() {
 	let btns = document.querySelectorAll('.btn');
 	[].forEach.call(btns, (btn) => {
@@ -238,7 +238,7 @@ function deleteElt() {
 
 function deleteCards() {
 	const cards = document.getElementsByClassName('card');
-	var cardsArray = [].slice.call(cards);
+	let cardsArray = [].slice.call(cards);
 	//console.log(cardsArray);
 	cardsArray.forEach(card => {
 		document.querySelector('.container').removeChild(card);
